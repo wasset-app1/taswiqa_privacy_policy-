@@ -1,49 +1,285 @@
 <!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>سياسة الخصوصية - تطبيق تسويقه</title>
+
   <style>
+    :root {
+      --primary: #5f7f5f;
+      --primary-dark: #3f5f3f;
+      --accent: #9cc77d;
+      --soft-bg: #f4faef;
+      --card-bg: #ffffff;
+      --text: #243024;
+      --muted: #6f7d6f;
+      --border: #e3eddc;
+      --shadow: 0 14px 35px rgba(63, 95, 63, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.8;
-      margin: 40px;
-      background-color: #ffffff;
-      color: #222;
+      margin: 0;
+      font-family: Arial, Tahoma, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(156, 199, 125, 0.28), transparent 32%),
+        linear-gradient(180deg, #fbfff7 0%, var(--soft-bg) 100%);
+      color: var(--text);
+      line-height: 1.9;
     }
-    h1, h2 {
-      color: #111;
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 16px 50px;
     }
+
+    .hero {
+      background: linear-gradient(135deg, #ffffff 0%, #f1f8eb 100%);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 34px 24px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background: rgba(156, 199, 125, 0.22);
+      left: -55px;
+      top: -55px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 14px;
+      color: var(--primary-dark);
+      font-weight: 700;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 20px rgba(63, 95, 63, 0.08);
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--soft-bg);
+      color: var(--primary-dark);
+      font-size: 19px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 34px;
+      color: var(--primary-dark);
+      position: relative;
+      z-index: 1;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 760px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .updated {
+      margin-top: 18px;
+      display: inline-block;
+      background: #eef7e8;
+      color: var(--primary-dark);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 8px 14px;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+      margin: 16px 0;
+      box-shadow: 0 10px 24px rgba(63, 95, 63, 0.08);
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      color: var(--primary-dark);
+      font-size: 23px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2::before {
+      content: "";
+      width: 10px;
+      height: 28px;
+      border-radius: 20px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    p {
+      margin: 10px 0;
+      color: var(--text);
+    }
+
     ul {
-      margin-right: 25px;
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    li {
+      background: #f8fcf4;
+      border: 1px solid #e6f0df;
+      border-radius: 16px;
+      padding: 10px 14px;
+      color: #354535;
+    }
+
+    li::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: 900;
+      margin-left: 8px;
+    }
+
+    .contact-card {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #ffffff;
+      border-radius: 24px;
+      padding: 24px;
+      margin-top: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card h2 {
+      color: #ffffff;
+    }
+
+    .contact-card h2::before {
+      background: #ffffff;
+    }
+
+    .contact-card p {
+      color: #ffffff;
+    }
+
+    .phone {
+      direction: ltr;
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 14px;
+      padding: 8px 14px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 24px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        padding: 18px 12px 36px;
+      }
+
+      .hero {
+        padding: 26px 18px;
+        border-radius: 24px;
+      }
+
+      h1 {
+        font-size: 27px;
+      }
+
+      .subtitle {
+        font-size: 15px;
+      }
+
+      .section {
+        padding: 18px;
+        border-radius: 20px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
     }
   </style>
+
 </head>
+
 <body>
+  <main class="page">
 
-  <h1>سياسة الخصوصية – تطبيق تسويقه</h1>
+```
+<section class="hero">
+  <div class="brand">
+    <span class="brand-icon">🛒</span>
+    <span>تطبيق تسويقه</span>
+  </div>
 
-  <p><strong>آخر تحديث:</strong> 25 يونيو 2026</p>
+  <h1>سياسة الخصوصية</h1>
 
-  <p>
+  <p class="subtitle">
     نحن في تطبيق “تسويقه” نلتزم بحماية خصوصية المستخدمين والحفاظ على سرية بياناتهم الشخصية.
     توضح هذه السياسة كيفية جمع المعلومات واستخدامها وحمايتها عند استخدام التطبيق.
   </p>
 
+  <div class="updated">آخر تحديث: 25 يونيو 2026</div>
+</section>
+
+<section class="section">
   <h2>المعلومات التي نقوم بجمعها</h2>
   <p>قد نقوم بجمع بعض أو كل البيانات التالية:</p>
   <ul>
     <li>الاسم الشخصي.</li>
     <li>رقم الهاتف.</li>
     <li>البريد الإلكتروني.</li>
-    <li>الموقع الجغرافي الحالي (GPS).</li>
+    <li>الموقع الجغرافي الحالي GPS.</li>
     <li>عنوان التوصيل.</li>
     <li>بيانات الطلبات والمشتريات.</li>
     <li>الرسائل المتبادلة من خلال خدمة الدردشة داخل التطبيق.</li>
     <li>بيانات الجهاز والمعلومات التقنية اللازمة لتحسين الأداء والأمان.</li>
   </ul>
+</section>
 
+<section class="section">
   <h2>تسجيل الدخول</h2>
   <p>
     يمكن للمستخدم إنشاء حساب أو تسجيل الدخول باستخدام خدمات خارجية مثل:
@@ -56,7 +292,9 @@
     وعند استخدام هذه الخدمات قد نحصل على بعض المعلومات الأساسية المرتبطة بالحساب مثل الاسم
     والبريد الإلكتروني وفقًا للصلاحيات التي يمنحها المستخدم.
   </p>
+</section>
 
+<section class="section">
   <h2>استخدام المعلومات</h2>
   <p>نستخدم المعلومات التي يتم جمعها للأغراض التالية:</p>
   <ul>
@@ -69,13 +307,17 @@
     <li>تحسين أداء التطبيق وتجربة الاستخدام.</li>
     <li>حماية التطبيق ومنع إساءة الاستخدام.</li>
   </ul>
+</section>
 
+<section class="section">
   <h2>الدردشة داخل التطبيق</h2>
   <p>
     يوفر التطبيق خدمة دردشة تمكن المستخدم من التواصل مع إدارة المتجر بشأن الطلبات أو الاستفسارات
     أو الدعم الفني. وقد يتم الاحتفاظ بالرسائل لتحسين جودة الخدمة وحل المشكلات المتعلقة بالطلبات.
   </p>
+</section>
 
+<section class="section">
   <h2>مشاركة البيانات</h2>
   <p>
     لا نقوم ببيع أو تأجير بيانات المستخدمين لأي طرف ثالث.
@@ -86,24 +328,32 @@
     <li>مع مندوبي التوصيل عند الحاجة لتنفيذ الطلبات.</li>
     <li>عند وجود التزام قانوني أو طلب رسمي من الجهات المختصة.</li>
   </ul>
+</section>
 
+<section class="section">
   <h2>الإشعارات</h2>
   <p>
     قد يرسل التطبيق إشعارات تتعلق بحالة الطلبات أو التحديثات المهمة أو العروض المتاحة.
     ويمكن للمستخدم إيقاف الإشعارات من إعدادات الجهاز في أي وقت.
   </p>
+</section>
 
+<section class="section">
   <h2>حماية البيانات</h2>
   <p>
     نتخذ إجراءات أمنية وتقنية مناسبة لحماية المعلومات من الوصول غير المصرح به أو التعديل
     أو الإفصاح أو الإتلاف.
   </p>
+</section>
 
+<section class="section">
   <h2>الاحتفاظ بالبيانات</h2>
   <p>
     يتم الاحتفاظ بالبيانات طالما كانت ضرورية لتقديم الخدمات أو للامتثال للالتزامات القانونية والتنظيمية.
   </p>
+</section>
 
+<section class="section">
   <h2>حذف الحساب</h2>
   <p>
     يمكن للمستخدم طلب حذف حسابه من خلال التطبيق.
@@ -112,7 +362,9 @@
     عند حذف الحساب سيتم حذف أو إخفاء البيانات الشخصية المرتبطة به خلال فترة معقولة،
     مع الاحتفاظ فقط بالبيانات التي يتطلب القانون الاحتفاظ بها.
   </p>
+</section>
 
+<section class="section">
   <h2>حقوق المستخدم</h2>
   <p>يحق للمستخدم:</p>
   <ul>
@@ -121,25 +373,38 @@
     <li>طلب حذف الحساب والبيانات المرتبطة به.</li>
     <li>التواصل معنا بشأن أي استفسارات تتعلق بالخصوصية.</li>
   </ul>
+</section>
 
+<section class="section">
   <h2>خصوصية الأطفال</h2>
   <p>
     التطبيق غير مخصص للأطفال دون السن القانوني، ولا نقوم بجمع بيانات الأطفال عن قصد.
   </p>
+</section>
 
+<section class="section">
   <h2>التعديلات على سياسة الخصوصية</h2>
   <p>
     قد نقوم بتحديث سياسة الخصوصية من وقت لآخر، وسيتم نشر أي تعديلات على هذه الصفحة
     مع تحديث تاريخ آخر تعديل.
   </p>
+</section>
 
+<section class="contact-card">
   <h2>التواصل معنا</h2>
   <p>
     إذا كان لديك أي استفسار بخصوص سياسة الخصوصية، يمكنك التواصل معنا عبر:
   </p>
   <p>
-    <strong>الهاتف:</strong> +20100005254
+    <span class="phone">+20100005254</span>
   </p>
+</section>
 
+<p class="footer">
+  © تطبيق تسويقه - جميع الحقوق محفوظة
+</p>
+```
+
+  </main>
 </body>
 </html>
